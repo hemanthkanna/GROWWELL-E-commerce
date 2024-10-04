@@ -1,13 +1,24 @@
+// ErrorHandler.js
+
+class ErrorHandler extends Error {
+  constructor(message, statusCode) {
+    super(message);
+    this.statusCode = statusCode;
+    Error.captureStackTrace(this, this.constructor);
+  }
+}
+
 const errorHandler = (err, req, res, next) => {
   // Default to 500 if no status code is set (internal server error)
-  let statusCode = res.statusCode === 200 ? 500 : res.statusCode;
+  let statusCode =
+    err.statusCode || (res.statusCode === 200 ? 500 : res.statusCode);
   let message = err.message;
 
   // Development Mode Error Handling
   if (process.env.NODE_ENV === "development") {
     return res.status(statusCode).json({
       success: false,
-      message: err.message,
+      message,
       stack: err.stack,
       error: err,
     });
@@ -81,11 +92,11 @@ const errorHandler = (err, req, res, next) => {
     });
   }
 
-  // In case no condition matches, send generic error
+  // In case no condition matches, send a generic error
   res.status(statusCode).json({
     success: false,
     message: err.message || "Something went wrong",
   });
 };
 
-module.exports = errorHandler;
+module.exports = { ErrorHandler, errorHandler };

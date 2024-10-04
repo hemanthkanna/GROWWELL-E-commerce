@@ -8,68 +8,35 @@ const productSchema = new mongoose.Schema({
     maxLength: [100, "Product name cannot exceed 100 characters"],
   },
   price: {
-    "120gm": {
-      type: Number,
-    },
-    "200gm": {
-      type: Number,
-    },
-    "250gm": {
-      type: Number,
-    },
-    "500gm": {
-      type: Number,
-    },
-    "1kg": {
-      type: Number,
-    },
+    type: Map,
+    of: Number,
   },
   description: {
-    naturalOrigin: {
-      type: String,
+    overView: { type: String },
+    naturalOrigin: { type: String },
+    safePacking: { type: String },
+    protection: { type: String },
+    nutrientDense: { type: String },
+    naturalSweetener: { type: String },
+    keyIngredients: { type: String },
+    healthBenefits: { type: String },
+    packaging: { type: String },
+    directionForUse: { type: String },
+    tasteAndFlavour: { type: String },
+    productionProcess: { type: String },
+    sourceAndSustainability: { type: String },
+    readyToMix: { type: String },
+    KeyBenefits: {
+      type: Map,
+      of: String,
     },
-    safePacking: {
-      type: String,
-    },
-    protection: {
-      type: String,
-    },
-    nutrientDense: {
-      type: String,
-    },
-    naturalSweetener: {
-      type: String,
-    },
-    overView: {
-      type: String,
-    },
-    keyIngredients: {
-      type: String,
-    },
-    healthBenefits: {
-      type: String,
-    },
-    packaging: {
-      type: String,
-    },
-    directionForUse: {
-      type: String,
-    },
-    tasteAndFlavour: {
-      type: String,
-    },
-    productionProcess: {
-      type: String,
-    },
-    sourceAndSustainability: {
-      type: String,
-    },
-    readyToMix: {
-      type: String,
-    },
-    keyFeatures: {
-      type: String,
-    },
+    nutrientPackedGoodness: { type: String },
+    spicyMetabolismBoost: { type: String },
+    HeartHealthSupport: { type: String },
+    PerfectForWeightManagement: { type: String },
+    RichInAntioxidants: { type: String },
+    BrainAndBoneHealth: { type: String },
+    SustainedEnergyAndSatiety: { type: String },
   },
   ratings: {
     type: Number,
@@ -106,7 +73,7 @@ const productSchema = new mongoose.Schema({
     required: [true, "Please enter product stock"],
     maxLength: [20, "Product stock cannot exceed 20"],
   },
-  product_quantity: {
+  productQuantity: {
     type: [String],
     required: true,
   },
@@ -140,4 +107,6 @@ const productSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Product", productSchema);
+let schema = mongoose.model("Product", productSchema);
+
+module.exports = schema;
