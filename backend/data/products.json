@@ -1,11 +1,11 @@
 [
     {
       "productName": "Kurinji Thinai (Finest Honey)",
-      "price": {
-        "250gm": 235,
-        "500gm": 450,
-        "1kg": 750
-      },
+      "prices":[
+        { "weight": "250gm", "price": 235 },
+        { "weight": "500gm", "price": 450 },
+        { "weight": "1kg", "price": 750 }
+      ],
       "description": {
         "overView": null,
         "naturalOrigin": "Kurinji Thinai Honey is derived from the nectar of Kurinji flowers, known for its distinct flavor and health benefits.",
@@ -49,11 +49,11 @@
     },
     {
       "productName": "Kurinji Thinai (Premium Honey)",
-      "price": {
-        "250gm": 275,
-        "500gm": 525,
-        "1kg": 900
-      },
+      "prices": [
+        { "weight": "250gm", "price": 235 },
+        { "weight": "500gm", "price": 450 },
+        { "weight": "1kg", "price": 750 }
+      ],
       "description": {
         "overView": null,
         "naturalOrigin": "Sourced from premium Kurinji flowers, offering exquisite flavor and numerous health benefits.",
@@ -97,10 +97,10 @@
     },
     {
       "productName": "Tulsi Honey",
-      "price": {
-        "250gm": 225,
-        "500gm": 375
-      },
+      "prices": [
+        {"weight":"250gm", "price": 225},
+        {"weight":"500gm", "price": 375}
+      ],
       "description": {
         "overView": null,
         "naturalOrigin": "Tulsi Honey is crafted from the nectar of Tulsi plants, celebrated for its spiritual and health benefits.",
@@ -143,10 +143,10 @@
     },
     {
       "productName": "Ajwain Honey",
-      "price": {
-        "250gm": 225,
-        "500gm": 375
-      },
+      "prices":[
+        {"weight":"250gm", "price": 225},
+        {"weight":"500gm", "price": 375}
+      ],
       "description": {
         "overView": null,
         "naturalOrigin": "Ajwain Honey is derived from the nectar of Ajwain flowers, known for its distinctive taste and health properties.",
@@ -189,10 +189,10 @@
     },
     {
       "productName": "Black Forest Honey",
-      "price": {
-        "250gm": 225,
-        "500gm": 375
-      },
+      "prices":[
+        {"weight":"250gm", "price": 225},
+        {"weight":"500gm", "price": 375}
+      ],
       "description": {
         "overView": null,
         "naturalOrigin": "Sourced from the nectar of wildflowers in the Black Forest region, known for its unique flavor.",
@@ -235,10 +235,10 @@
     },
     {
       "productName": "Acacia Honey",
-      "price": {
-        "250gm": 225,
-        "500gm": 375
-      },
+      "prices":[
+        {"weight":"250gm", "price": 225},
+        {"weight":"500gm", "price": 375}
+      ],
       "description": {
         "overView": null,
         "naturalOrigin": "Acacia Honey is collected from the nectar of acacia flowers, known for its light color and mild flavor.",
@@ -281,10 +281,10 @@
     },
     {
       "productName": "Kashmiri Honey",
-      "price": {
-        "250gm": 225,
-        "500gm": 375
-      },
+      "prices":[
+        {"weight":"250gm", "price": 225},
+        {"weight":"500gm", "price": 375}
+      ],
       "description": {
         "overView": null,
         "naturalOrigin": "Kashmiri Honey is sourced from the nectar of flowers native to the Kashmir region, known for its rich flavor.",
@@ -327,10 +327,10 @@
     },
     {
       "productName": "Eucalyptus Honey",
-      "price": {
-        "250gm": 225,
-        "500gm": 375
-      },
+      "prices": [
+        {"weight":"250gm", "price": 225},
+        {"weight":"500gm", "price": 375}
+      ],
       "description": {
         "overView": null,
         "naturalOrigin": "Eucalyptus Honey is derived from the nectar of eucalyptus flowers, known for its medicinal properties.",
@@ -373,10 +373,10 @@
     },
     {
       "productName": "Fennel Honey",
-      "price": {
-        "250gm": 225,
-        "500gm": 375
-      },
+      "prices":[
+        {"weight":"250gm", "price": 225},
+        {"weight":"500gm", "price": 375}
+      ],
       "description": {
         "overView": null,
         "naturalOrigin": "Fennel Honey is a unique blend of raw honey infused with fennel essence. With its licorice-like flavor, it aids digestion and offers both taste and wellness. Sourced from fennel flowers, it's 100% natural, with no additives or preservatives.",
@@ -419,10 +419,10 @@
     },
     {
       "productName": "Rosewood Honey",
-      "price": {
-        "250gm": 225,
-        "500gm": 375
-      },
+      "prices": [
+        {"weight":"250gm", "price": 225},
+        {"weight":"500gm", "price": 375}
+      ],
       "description": {
         "overView": null,
         "naturalOrigin": "Rosewood Honey is ethically sourced from the nectar of rosewood tree blossoms, ensuring a 100% natural and pure product.",
@@ -465,10 +465,10 @@
     },
     {
       "productName": "Coffee Honey",
-      "price": {
-        "250gm": 225,
-        "500gm": 375
-      },
+      "prices": [
+        {"weight":"250gm", "price": 225},
+        {"weight":"500gm", "price": 375}
+      ],
       "description": {
         "overView": null,
         "naturalOrigin": "Coffee Honey is harvested from the nectar of coffee plant blossoms, ensuring a 100% natural product free from artificial additives.",
@@ -511,10 +511,10 @@
     },
     {
       "productName": "Orange Honey",
-      "price": {
-        "250gm": 225,
-        "500gm": 375
-      },
+      "prices":[
+        {"weight":"250gm", "price": 225},
+        {"weight":"500gm", "price": 375}
+      ],
       "description": {
         "overView": null,
         "naturalOrigin": "Orange Honey is derived from the nectar of orange blossoms, known for its zesty flavor and refreshing aroma.",
@@ -557,10 +557,10 @@
     },
     {
       "productName": "Little Bee Honey",
-      "price": {
-        "250gm": 225,
-        "500gm": 375
-      },
+      "prices":[
+        {"weight":"250gm", "price": 225},
+        {"weight":"500gm", "price": 375}
+      ],
       "description": {
         "overView": null,
         "naturalOrigin": "Little Bee Honey is harvested from diverse wildflower sources, ensuring a mix of flavors and health benefits.",
@@ -603,9 +603,9 @@
     },
     {
       "productName": "ABC Nutrimix",
-      "price": {
-        "200gm": 230
-      },
+      "prices": [
+        {"weight": "200gm" , "price": 230}
+      ],
       "description": {
         "overView": "This Nutrient feast is enriched with three superstar ingredients: apple, beetroot, and carrots to support your health. This miracle drink contains zero white sugar and is a better alternative to traditional country sugar. Treat your health to a tasty blend of nutrients. Our Nutrimix is best suited for young mothers concerned about their children\u2019s eating habits and adults looking for an instant energy boost.",
         "naturalOrigin": null,
@@ -647,9 +647,9 @@
     },
     {
       "productName": "Beetroot Nutrimix",
-      "price": {
-        "200gm": 230
-      },
+      "prices": [
+        {"weight": "200gm" , "price": 230}
+      ],
       "description": {
         "overView": "A 100% nutrient feast enriched with the superstar ingredient beetroot to support your health. This miracle drink contains zero white sugar and is a better alternative to traditional country sugar. Treat your health with a tasty blend of nutrients.",
         "naturalOrigin": null,
@@ -691,9 +691,9 @@
     },
     {
       "productName": "Millet ABC Nutrimix",
-      "price": {
-        "200gm": 230
-      },
+      "prices":[
+        {"weight": "200gm" , "price": 230}
+      ],
       "description": {
         "overView": "This Nutrient feast is enriched with apple, beetroot, and carrots to support your health. This miracle drink contains zero white sugar and is a better alternative to traditional country sugar. Best suited for young mothers and adults seeking energy boosts.",
         "naturalOrigin": null,
@@ -735,9 +735,9 @@
     },
     {
       "productName": "Millet Beetroot Nutrimix",
-      "price": {
-        "200gm": 230
-      },
+      "prices": [
+        {"weight": "200gm" , "price": 230}
+      ],
       "description": {
         "overView": "A 100% nutrient feast enriched with beetroot and millets to support your health. This miracle drink contains zero white sugar and is a better alternative to traditional country sugar.",
         "naturalOrigin": null,
@@ -779,9 +779,9 @@
     },
     {
       "productName": "Ragi Hot Chocolate",
-      "price": {
-        "200gm": 230
-      },
+      "prices": [
+        {"weight": "200gm" , "price": 230}
+      ],
       "description": {
         "overView": "Enjoy the rich and comforting taste of our Ragi Chocolate Mix guilt-free. Each sip satisfies your chocolate cravings while nourishing your body.",
         "naturalOrigin": null,
@@ -823,9 +823,9 @@
     },
     {
       "productName": "Carrot Nutrimix",
-      "price": {
-        "200gm": 230
-      },
+      "prices": [
+        {"weight": "200gm" , "price": 230}
+      ],
       "description": {
         "overView": "A 100% nutrient feast enriched with the superstar ingredient, Carrot supports your health. This miracle drink contains zero white sugar and is a better alternative of traditional country sugar. Treat your health with a healthy and tasty blend of nutrients. Our Nutrimix is best suited for young mothers concerned about their children\u2019s eating habits and adults looking for an instant energy boost.",
         "naturalOrigin": null,
@@ -867,9 +867,9 @@
     },
     {
       "productName": "Turmeric Milk Mix",
-      "price": {
-        "200gm": 230
-      },
+      "prices":[
+        {"weight": "200gm" , "price": 230}
+      ],
       "description": {
         "overView": "Our Turmeric Milk Mix blends the strong flavors and bright colors of turmeric, pepper, cinnamon, dry ginger, and country sugar. Enjoy a soothing cup of our Turmeric Latte to elevate your everyday routine. It's a delectable blend that satisfies the senses and replenishes the body.",
         "naturalOrigin": null,
@@ -911,9 +911,9 @@
     },
     {
       "productName": "Moringa Nutrimix",
-      "price": {
-        "200gm": 230
-      },
+      "prices":[
+        {"weight": "200gm" , "price": 230}
+      ],
       "description": {
         "overView": "A 100% nutrient feast enriched with the superstar ingredient, Moringa supports your health. This miracle drink contains zero white sugar and is a better alternative of traditional country sugar. Treat your health with a healthy and tasty blend of nutrients. Our Nutrimix is best suited for young mothers concerned about their children\u2019s eating habits and adults looking for an instant energy boost.",
         "naturalOrigin": null,
@@ -955,9 +955,9 @@
     },
     {
       "productName": "Chili Cashew",
-      "price": {
-        "120gm": 175
-      },
+      "prices":[
+        {"weight": "120gm" , "price": 175}
+      ],
       "description": {
         "overView": "Enjoy the ideal combination of spice and crunch with our Chili Cashews. This flavorful snack not only satisfies your taste buds but also provides your body with essential nutrients. Each bite offers the rich, buttery taste of premium cashews, roasted to perfection and coated in a bold chili seasoning for an extra kick.",
         "naturalOrigin": null,
@@ -988,7 +988,7 @@
           "image": "products/images/001.png"
         }
       ],
-      "category": "Spices (Seeds & Nuts)",
+      "category": "Spices",
       "productQuantity": [
         "120gm"
       ],
@@ -999,9 +999,9 @@
     },
     {
       "productName": "Salted Almonds",
-      "price": {
-        "120gm": 160
-      },
+      "prices":[
+        {"weight": "120gm" , "price": 160}
+      ],
       "description": {
         "overView": "Experience the timeless flavor and wholesome goodness of our Salted Almonds. This simple yet satisfying snack combines premium, crunchy almonds with a delicate touch of sea salt. Carefully selected and lightly roasted to perfection, these almonds offer a balanced blend of savory flavor and nutritious benefits, making them the perfect go-to snack for any time of day.",
         "naturalOrigin": null,
@@ -1032,7 +1032,7 @@
           "image": "products/images/001.png"
         }
       ],
-      "category": "Spices (Seeds & Nuts)",
+      "category": "Spices",
       "productQuantity": [
         "120gm"
       ],
@@ -1043,9 +1043,9 @@
     },
     {
       "productName": "Chili Peanut",
-      "price": {
-        "120gm": 95
-      },
+      "prices": [
+        {"weight": "120gm" , "price": 95}
+      ],
       "description": {
         "overView": "Elevate your snack experience with our Chili Peanuts. Our premium peanuts are perfectly roasted to enhance their natural flavor and then seasoned with a carefully crafted blend of chili spices, creating a tantalizing mix of heat and crunch that\u2019s both satisfying and nutritious.",
         "naturalOrigin": null,
@@ -1076,7 +1076,7 @@
           "image": "products/images/001.png"
         }
       ],
-      "category": "Spices (Seeds & Nuts)",
+      "category": "Spices",
       "productQuantity": [
         "120gm"
       ],
@@ -1087,9 +1087,9 @@
     },
     {
       "productName": "6 in 1 Seed Mix",
-      "price": {
-        "250gm": 220
-      },
+      "prices": [
+        {"weight": "250gm" , "price": 220}
+      ],
       "description": {
         "overView": "A delicious blend of six nutrient-rich seeds, perfect for snacking or adding to your meals.",
         "naturalOrigin": null,
@@ -1120,7 +1120,7 @@
           "image": "products/images/001.png"
         }
       ],
-      "category": "Spices (Seeds & Nuts)",
+      "category": "Spices",
       "productQuantity": [
         "250gm"
       ],

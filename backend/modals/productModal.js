@@ -7,10 +7,12 @@ const productSchema = new mongoose.Schema({
     trim: true,
     maxLength: [100, "Product name cannot exceed 100 characters"],
   },
-  price: {
-    type: Map,
-    of: Number,
-  },
+  prices: [
+    {
+      weight: String,
+      price: Number,
+    },
+  ],
   description: {
     overView: { type: String },
     naturalOrigin: { type: String },
@@ -57,7 +59,7 @@ const productSchema = new mongoose.Schema({
       values: [
         "Western Ghats honey",
         "Flavoured Honey",
-        "Spices (Seeds & Nuts)",
+        "Spices",
         "Nutrimix",
         "Millet",
       ],

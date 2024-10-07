@@ -14,7 +14,61 @@ exports.newProduct = catchAsyncError(async (req, res, next) => {
 
 // GET ALL PRODUCTS      --   /api/v1/products
 exports.getProducts = catchAsyncError(async (req, res, next) => {
-  const products = await Product.find();
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.limit) || 6;
+  const skip = (page - 1) * limit;
+
+  const buildQuery = {};
+
+  if (req.query.search) {
+    buildQuery.$or = [
+      { productName: { $regex: req.query.search, $options: "i" } },
+      { "description.overView": { $regex: req.query.search, $options: "i" } },
+      {
+        "description.naturalOrigin": {
+          $regex: req.query.search,
+          $options: "i",
+        },
+      },
+      {
+        "description.safePacking": { $regex: req.query.search, $options: "i" },
+      },
+      // Add more nested fields as needed
+    ];
+  }
+
+  if (req.query.category) {
+    buildQuery.category = req.query.category;
+  }
+
+  if (req.query.minPrice || req.query.maxPrice) {
+    buildQuery["prices"] = {
+      $elemMatch: {},
+    };
+
+    const minPrice = parseFloat(req.query.minPrice);
+    const maxPrice = parseFloat(req.query.maxPrice);
+
+    // Set $gte for minPrice if provided
+    if (req.query.minPrice) {
+      buildQuery["prices"].$elemMatch.price = { $gte: minPrice };
+    }
+
+    // Set $lte for maxPrice if provided and merge it with existing $gte
+    if (req.query.maxPrice) {
+      buildQuery["prices"].$elemMatch.price = {
+        ...buildQuery["prices"].$elemMatch.price,
+        $lte: maxPrice,
+      };
+    }
+  }
+
+  if (req.query.ratings) {
+    const ratings = parseFloat(req.query.ratings);
+    buildQuery.ratings = { $gte: ratings };
+  }
+
+  const products = await Product.find(buildQuery).skip(skip).limit(limit);
   res.status(201).json({
     success: true,
     data: products,
