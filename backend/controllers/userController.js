@@ -70,14 +70,14 @@ exports.logout = catchAsyncError(async (req, res, next) => {
 });
 
 exports.forgotPassword = catchAsyncError(async (req, res, next) => {
-  const user = await User.findOne({ email: req.user.email });
+  const user = await User.findOne({ email: req.body.email });
   if (!user) {
     return next(
-      new ErrorHandler(`User not found with the email ${req.user.email}`, 400)
+      new ErrorHandler(`User not found with the email ${req.body.email}`, 400)
     );
   }
 
-  const resetToken = user.getResetToken();
+  const resetToken = await user.getResetToken();
   await user.save({ validateBeforeSave: false });
 
   let BASE_URL = process.env.FRONTEND_URL;
@@ -89,13 +89,14 @@ exports.forgotPassword = catchAsyncError(async (req, res, next) => {
   const resetUrl = `${BASE_URL}/user/auth/resetPassword/${resetToken}`;
   const message = `You are receiving this email because you (or someone else) requested a password reset for your account.
   \n\nPlease click on the following link to complete the process:\n\n${resetUrl}\n\nIf you did not request this, 
-   please ignore this email and your password will remain unchanged.`;
+  please ignore this email and your password will remain unchanged.`;
 
   try {
-    await sendEmail({
-      email: user.email,
-      subject: "Password Reset Request",
-      message: message,
+    await sendEmail(user.email, "Password Reset Request", message);
+    // Send response after the email has been sent successfully
+    return res.status(200).json({
+      success: true,
+      message: "Password reset email sent successfully.",
     });
   } catch (error) {
     user.resetPasswordToken = undefined;
@@ -132,6 +133,12 @@ exports.resetPassword = catchAsyncError(async (req, res, next) => {
   user.resetPasswordToken = undefined;
   user.resetPasswordTokenExpire = undefined;
   await user.save({ validateBeforeSave: false });
+
+  // Send a response after password reset is successful
+  return res.status(200).json({
+    success: true,
+    message: "Password has been reset successfully.",
+  });
 });
 
 exports.getUserProfile = catchAsyncError(async (req, res, next) => {
