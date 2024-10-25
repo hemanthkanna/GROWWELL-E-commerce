@@ -17,10 +17,49 @@ exports.newUser = catchAsyncError(async (req, res, next) => {
     email,
     password,
   });
+
+  const otpToken = await user.getOtpToken();
+  await user.save({ validateBeforeSave: false });
+
+  try {
+    await sendEmail(
+      user.email,
+      "GrowWell - One Time Password (OTP)",
+      `Your OTP for GrowWell is ${otpToken}`
+    );
+  } catch {
+    user.otpToken = undefined;
+    user.otpTokenExpire = undefined;
+    await user.save({ validateBeforeSave: false });
+    return next(new ErrorHandler("Failed to send OTP email", 500));
+  }
+
   res.status(201).json({
     success: true,
-    message: "User created successfully",
-    data: user,
+    message: "OTP email sent successfully",
+  });
+});
+
+exports.verifyOtp = catchAsyncError(async (req, res, next) => {
+  const { otp } = req.body;
+  const otpToken = crypto.createHash("sha256").update(otp).digest("hex");
+  const user = await User.findOne({
+    otpToken,
+    otpTokenExpire: { $gt: Date.now() },
+  });
+
+  if (!user) {
+    return next(new ErrorHandler("Invalid OTP", 400));
+  }
+  user.otpToken = undefined;
+  user.otpTokenExpire = undefined;
+  user.isVerified = true;
+
+  await user.save({ validateBeforeSave: false });
+
+  res.status(200).json({
+    success: true,
+    message: "OTP verified successfully",
   });
 });
 
@@ -32,6 +71,14 @@ exports.login = catchAsyncError((req, res, next) => {
     if (!user) {
       return next(
         new ErrorHandler(info.message || `Authentication Failed`, 401)
+      );
+    }
+    if (!user.isVerified) {
+      return next(
+        new ErrorHandler(
+          "User is not verified. Please verify your email first",
+          401
+        )
       );
     }
 
