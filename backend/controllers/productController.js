@@ -2,7 +2,7 @@ const catchAsyncError = require("../middlewares/catchAsyncError");
 const { ErrorHandler } = require("../middlewares/errorHandler");
 const Product = require("../modals/productModal");
 
-// CREATE NEW PRODUCT   --   /api/v1/product/new
+//ADMIN :  CREATE NEW PRODUCT   --   /api/v1/product/new
 exports.newProduct = catchAsyncError(async (req, res, next) => {
   const product = await Product.create(req.body);
   res.status(201).json({
@@ -89,7 +89,7 @@ exports.getSingleProduct = catchAsyncError(async (req, res, next) => {
   });
 });
 
-// UPDATE PRODUCT       --   /api/v1/product/:id
+//ADMIN: UPDATE PRODUCT       --   /api/v1/product/:id
 exports.updateProduct = catchAsyncError(async (req, res, next) => {
   const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
@@ -105,7 +105,7 @@ exports.updateProduct = catchAsyncError(async (req, res, next) => {
   });
 });
 
-// DELETE PRODUCT      --   /api/v1/product/:id
+//ADMIN: DELETE PRODUCT      --   /api/v1/product/:id
 exports.deleteProduct = catchAsyncError(async (req, res, next) => {
   const product = await Product.findByIdAndDelete(req.params.id);
   if (!product) {

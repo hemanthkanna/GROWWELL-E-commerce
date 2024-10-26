@@ -5,6 +5,7 @@ const passport = require("../middlewares/passport");
 const crypto = require("crypto");
 const { sendEmail } = require("../utils/sendEmail");
 
+//CREATE NEW USER   --   /api/v1/user/auth/new
 exports.newUser = catchAsyncError(async (req, res, next) => {
   const { name, email, password } = req.body;
   const existingUser = await User.findOne({ email });
@@ -40,6 +41,38 @@ exports.newUser = catchAsyncError(async (req, res, next) => {
   });
 });
 
+//SEND VERIFY OTP MAIL  --  /api/v1/user/auth/sendOTP
+exports.sendOtp = catchAsyncError(async (req, res, next) => {
+  const { email } = req.body;
+  const user = await User.findOne({ email });
+
+  if (!user) {
+    return next(new ErrorHandler("User not found", 404));
+  }
+
+  const otpToken = await user.getOtpToken();
+  await user.save({ validateBeforeSave: false });
+
+  try {
+    await sendEmail(
+      user.email,
+      "GrowWell - One Time Password (OTP)",
+      `Your OTP for GrowWell is ${otpToken}`
+    );
+  } catch {
+    user.otpToken = undefined;
+    user.otpTokenExpire = undefined;
+    await user.save({ validateBeforeSave: false });
+    return next(new ErrorHandler("Failed to send OTP email", 500));
+  }
+
+  res.status(200).json({
+    success: true,
+    message: "OTP email sent successfully",
+  });
+});
+
+//VERIFY USER EMAIL  --  /api/v1/user/auth/verify
 exports.verifyOtp = catchAsyncError(async (req, res, next) => {
   const { otp } = req.body;
   const otpToken = crypto.createHash("sha256").update(otp).digest("hex");
@@ -63,6 +96,7 @@ exports.verifyOtp = catchAsyncError(async (req, res, next) => {
   });
 });
 
+//LOGIN USER       --    /api/v1/user/auth/login
 exports.login = catchAsyncError((req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) {
@@ -95,6 +129,7 @@ exports.login = catchAsyncError((req, res, next) => {
   })(req, res, next);
 });
 
+//LOGOUT USER      --   /api/v1/user/auth/logout
 exports.logout = catchAsyncError(async (req, res, next) => {
   if (!req.user) {
     return res.status(401).json({
@@ -116,6 +151,7 @@ exports.logout = catchAsyncError(async (req, res, next) => {
   });
 });
 
+//FORGOT PASSWORD  --  /api/v1/user/auth/forgot/password
 exports.forgotPassword = catchAsyncError(async (req, res, next) => {
   const user = await User.findOne({ email: req.body.email });
   if (!user) {
@@ -153,6 +189,7 @@ exports.forgotPassword = catchAsyncError(async (req, res, next) => {
   }
 });
 
+// RESET PASSWORD  --  /api/v1/user/auth/resetPassword/:token
 exports.resetPassword = catchAsyncError(async (req, res, next) => {
   const resetPasswordToken = crypto
     .createHash("sha256")
@@ -188,6 +225,7 @@ exports.resetPassword = catchAsyncError(async (req, res, next) => {
   });
 });
 
+// GET USER PROFILE  --  /api/v1/user/profile
 exports.getUserProfile = catchAsyncError(async (req, res, next) => {
   const user = await User.findById(req.user._id);
   if (!user) {
@@ -199,6 +237,7 @@ exports.getUserProfile = catchAsyncError(async (req, res, next) => {
   });
 });
 
+// UPDATE USER PROFILE  --  /api/v1/user/profile/update
 exports.updateUserProfile = catchAsyncError(async (req, res, next) => {
   let newUserData = {
     name: req.body.name,
@@ -216,6 +255,7 @@ exports.updateUserProfile = catchAsyncError(async (req, res, next) => {
   });
 });
 
+// UPDATE USER PASSWORD  --  /api/v1/user/password/change
 exports.updateUserPassword = catchAsyncError(async (req, res, next) => {
   const user = await User.findById(req.user._id).select("+password");
   if (!user) {
@@ -233,6 +273,7 @@ exports.updateUserPassword = catchAsyncError(async (req, res, next) => {
   });
 });
 
+//ADMIN :  GET ALL USERS    --  /api/v1/admin/users
 exports.getAllUsers = catchAsyncError(async (req, res, next) => {
   const users = await User.find();
   res.status(200).json({
@@ -241,6 +282,7 @@ exports.getAllUsers = catchAsyncError(async (req, res, next) => {
   });
 });
 
+//ADMIN :  GET USER BY ID  --  /api/v1/admin/user/:id
 exports.getUser = catchAsyncError(async (req, res, next) => {
   const user = await User.findById(req.params.id);
   if (!user) {
@@ -254,6 +296,7 @@ exports.getUser = catchAsyncError(async (req, res, next) => {
   });
 });
 
+//ADMIN :  UPDATE USER BY ID  --  /api/v1/admin/user/:id
 exports.updateUser = catchAsyncError(async (req, res, next) => {
   const newUserData = {
     name: req.body.name,
@@ -276,6 +319,7 @@ exports.updateUser = catchAsyncError(async (req, res, next) => {
   });
 });
 
+//ADMIN :  DELETE USER BY ID  --  /api/v1/admin/user/:id
 exports.deleteUser = catchAsyncError(async (req, res, next) => {
   const user = await User.findByIdAndDelete(req.params.id);
 

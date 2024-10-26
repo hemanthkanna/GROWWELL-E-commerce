@@ -13,6 +13,7 @@ const {
   updateUser,
   deleteUser,
   verifyOtp,
+  sendOtp,
 } = require("../controllers/userController");
 const {
   authorizedRoles,
@@ -21,6 +22,7 @@ const {
 const router = express.Router();
 
 router.route("/user/auth/new").post(newUser);
+router.route("/user/auth/sendOTP").post(sendOtp);
 router.route("/user/auth/verify").post(verifyOtp);
 router.route("/user/auth/logIn").post(login);
 router.route("/user/auth/logout").post(logout);
