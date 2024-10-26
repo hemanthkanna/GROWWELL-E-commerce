@@ -48,3 +48,17 @@ exports.getSingleOrder = catchAsyncError(async (req, res, next) => {
     order,
   });
 });
+
+//GET LOGGED IN USER ORDERS -- /api/v1/myOrders
+exports.getMyOrders = catchAsyncError(async (req, res, next) => {
+  const order = await Order.find({
+    user: req.user._id,
+  });
+  res.status(200).json({
+    success: true,
+    count: order.length,
+    data: order,
+  });
+});
+
+//ADMIN : GET ALL ORDERS  --  /api/v1/orders
