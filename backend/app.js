@@ -54,9 +54,11 @@ app.use(passport.session());
 
 const products = require("./routes/productRoute");
 const auth = require("./routes/authRoute");
+const order = require("./routes/orderRoute");
 
 app.use("/api/v1/", products);
 app.use("/api/v1/", auth);
+app.use("/api/v1/", order);
 
 // app.get("/", (req, res) => {
 //   res.send("Welcome to the E-commerce API!");
