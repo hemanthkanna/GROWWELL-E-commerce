@@ -12,6 +12,7 @@ const {
   getOrdersByStatus,
   getOrdersByUserId,
   deleteOrder,
+  getOrdersByDateRange,
 } = require("../controllers/orderController");
 const router = express.Router();
 
@@ -36,6 +37,10 @@ router
 router
   .route("/admin/orders/user/:userId")
   .get(isAuthenticatedUser, authorizedRoles("admin"), getOrdersByUserId);
+
+router
+  .route("/admin/orders/range/:startDate/:endDate")
+  .get(isAuthenticatedUser, authorizedRoles("admin"), getOrdersByDateRange);
 
 router
   .route("/admin/order/:id")
