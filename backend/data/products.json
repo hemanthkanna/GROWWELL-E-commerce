@@ -2,9 +2,9 @@
     {
       "productName": "Kurinji Thinai (Finest Honey)",
       "prices":[
-        { "weight": "250gm", "price": 235 },
-        { "weight": "500gm", "price": 450 },
-        { "weight": "1kg", "price": 750 }
+        { "weight": "250gm", "price": 235 , "offerPrice": null ,"stock" : 3 },
+        { "weight": "500gm", "price": 450, "offerPrice": null ,"stock" : 3  },
+        { "weight": "1kg", "price": 750 , "offerPrice": null ,"stock" : 3 }
       ],
       "description": {
         "overView": null,
@@ -41,7 +41,7 @@
         "500gm",
         "1kg"
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Western Ghats honey",
       "seller": "Grow Well",
       "numOfReviews": 10,
@@ -50,9 +50,9 @@
     {
       "productName": "Kurinji Thinai (Premium Honey)",
       "prices": [
-        { "weight": "250gm", "price": 235 },
-        { "weight": "500gm", "price": 450 },
-        { "weight": "1kg", "price": 750 }
+        { "weight": "250gm", "price": 235, "offerPrice": null ,"stock" : 3  },
+        { "weight": "500gm", "price": 450 , "offerPrice": null ,"stock" : 3 },
+        { "weight": "1kg", "price": 750 , "offerPrice": null ,"stock" : 3 }
       ],
       "description": {
         "overView": null,
@@ -89,7 +89,7 @@
         "500gm",
         "1kg"
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Western Ghats honey",
       "seller": "Grow Well",
       "numOfReviews": 10,
@@ -98,8 +98,8 @@
     {
       "productName": "Tulsi Honey",
       "prices": [
-        {"weight":"250gm", "price": 225},
-        {"weight":"500gm", "price": 375}
+        {"weight":"250gm", "price": 225 , "offerPrice": null ,"stock" : 3 },
+        {"weight":"500gm", "price": 375 , "offerPrice": null ,"stock" : 3 }
       ],
       "description": {
         "overView": null,
@@ -135,7 +135,7 @@
         "250gm",
         "500gm"
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Flavoured Honey",
       "seller": "Grow Well",
       "numOfReviews": 10,
@@ -144,8 +144,8 @@
     {
       "productName": "Ajwain Honey",
       "prices":[
-        {"weight":"250gm", "price": 225},
-        {"weight":"500gm", "price": 375}
+        {"weight":"250gm", "price": 225, "offerPrice": null ,"stock" : 3},
+        {"weight":"500gm", "price": 375, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": null,
@@ -181,7 +181,7 @@
         "250gm",
         "500gm"
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Flavoured Honey",
       "seller": "Grow Well",
       "numOfReviews": 10,
@@ -190,8 +190,8 @@
     {
       "productName": "Black Forest Honey",
       "prices":[
-        {"weight":"250gm", "price": 225},
-        {"weight":"500gm", "price": 375}
+        {"weight":"250gm", "price": 225, "offerPrice": null ,"stock" : 3},
+        {"weight":"500gm", "price": 375, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": null,
@@ -227,7 +227,7 @@
         "250gm",
         "500gm"
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Flavoured Honey",
       "seller": "Grow Well",
       "numOfReviews": 10,
@@ -236,8 +236,8 @@
     {
       "productName": "Acacia Honey",
       "prices":[
-        {"weight":"250gm", "price": 225},
-        {"weight":"500gm", "price": 375}
+        {"weight":"250gm", "price": 225, "offerPrice": null ,"stock" : 3},
+        {"weight":"500gm", "price": 375, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": null,
@@ -273,7 +273,7 @@
         "250gm",
         "500gm"
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Flavoured Honey",
       "seller": "Grow Well",
       "numOfReviews": 10,
@@ -282,8 +282,8 @@
     {
       "productName": "Kashmiri Honey",
       "prices":[
-        {"weight":"250gm", "price": 225},
-        {"weight":"500gm", "price": 375}
+        {"weight":"250gm", "price": 225, "offerPrice": null ,"stock" : 3},
+        {"weight":"500gm", "price": 375, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": null,
@@ -319,7 +319,7 @@
         "250gm",
         "500gm"
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Flavoured Honey",
       "seller": "Grow Well",
       "numOfReviews": 10,
@@ -328,8 +328,8 @@
     {
       "productName": "Eucalyptus Honey",
       "prices": [
-        {"weight":"250gm", "price": 225},
-        {"weight":"500gm", "price": 375}
+        {"weight":"250gm", "price": 225, "offerPrice": null ,"stock" : 3},
+        {"weight":"500gm", "price": 375, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": null,
@@ -365,7 +365,7 @@
         "250gm",
         "500gm"
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Flavoured Honey",
       "seller": "Grow Well",
       "numOfReviews": 10,
@@ -374,8 +374,8 @@
     {
       "productName": "Fennel Honey",
       "prices":[
-        {"weight":"250gm", "price": 225},
-        {"weight":"500gm", "price": 375}
+        {"weight":"250gm", "price": 225, "offerPrice": null ,"stock" : 3},
+        {"weight":"500gm", "price": 375, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": null,
@@ -411,7 +411,7 @@
         "250gm",
         "500gm"
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Flavoured Honey",
       "seller": "Grow Well",
       "numOfReviews": 10,
@@ -420,8 +420,8 @@
     {
       "productName": "Rosewood Honey",
       "prices": [
-        {"weight":"250gm", "price": 225},
-        {"weight":"500gm", "price": 375}
+        {"weight":"250gm", "price": 225, "offerPrice": null ,"stock" : 3},
+        {"weight":"500gm", "price": 375, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": null,
@@ -457,7 +457,7 @@
         "250gm",
         "500gm"
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Flavoured Honey",
       "seller": "Grow Well",
       "numOfReviews": 10,
@@ -466,8 +466,8 @@
     {
       "productName": "Coffee Honey",
       "prices": [
-        {"weight":"250gm", "price": 225},
-        {"weight":"500gm", "price": 375}
+        {"weight":"250gm", "price": 225, "offerPrice": null ,"stock" : 3},
+        {"weight":"500gm", "price": 375, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": null,
@@ -503,7 +503,7 @@
         "250gm",
         "500gm"
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Flavoured Honey",
       "seller": "Grow Well",
       "numOfReviews": 10,
@@ -512,8 +512,8 @@
     {
       "productName": "Orange Honey",
       "prices":[
-        {"weight":"250gm", "price": 225},
-        {"weight":"500gm", "price": 375}
+        {"weight":"250gm", "price": 225, "offerPrice": null ,"stock" : 3},
+        {"weight":"500gm", "price": 375, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": null,
@@ -549,7 +549,7 @@
         "250gm",
         "500gm"
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Flavoured Honey",
       "seller": "Grow Well",
       "numOfReviews": 10,
@@ -558,8 +558,8 @@
     {
       "productName": "Little Bee Honey",
       "prices":[
-        {"weight":"250gm", "price": 225},
-        {"weight":"500gm", "price": 375}
+        {"weight":"250gm", "price": 225, "offerPrice": null ,"stock" : 3},
+        {"weight":"500gm", "price": 375, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": null,
@@ -595,7 +595,7 @@
         "250gm",
         "500gm"
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Flavoured Honey",
       "seller": "Grow Well",
       "numOfReviews": 10,
@@ -604,7 +604,7 @@
     {
       "productName": "ABC Nutrimix",
       "prices": [
-        {"weight": "200gm" , "price": 230}
+        {"weight": "200gm" , "price": 230, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": "This Nutrient feast is enriched with three superstar ingredients: apple, beetroot, and carrots to support your health. This miracle drink contains zero white sugar and is a better alternative to traditional country sugar. Treat your health to a tasty blend of nutrients. Our Nutrimix is best suited for young mothers concerned about their children\u2019s eating habits and adults looking for an instant energy boost.",
@@ -639,7 +639,7 @@
       "productQuantity": [
         "200gm"
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Nutrimix",
       "seller": "Grow Well",
       "numOfReviews": 10,
@@ -648,7 +648,7 @@
     {
       "productName": "Beetroot Nutrimix",
       "prices": [
-        {"weight": "200gm" , "price": 230}
+        {"weight": "200gm" , "price": 230, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": "A 100% nutrient feast enriched with the superstar ingredient beetroot to support your health. This miracle drink contains zero white sugar and is a better alternative to traditional country sugar. Treat your health with a tasty blend of nutrients.",
@@ -680,7 +680,7 @@
           "image": "products/images/001.png"
         }
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Nutrimix",
       "productQuantity": [
         "200gm"
@@ -692,7 +692,7 @@
     {
       "productName": "Millet ABC Nutrimix",
       "prices":[
-        {"weight": "200gm" , "price": 230}
+        {"weight": "200gm" , "price": 230, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": "This Nutrient feast is enriched with apple, beetroot, and carrots to support your health. This miracle drink contains zero white sugar and is a better alternative to traditional country sugar. Best suited for young mothers and adults seeking energy boosts.",
@@ -724,7 +724,7 @@
           "image": "products/images/001.png"
         }
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Nutrimix",
       "productQuantity": [
         "200gm"
@@ -736,7 +736,7 @@
     {
       "productName": "Millet Beetroot Nutrimix",
       "prices": [
-        {"weight": "200gm" , "price": 230}
+        {"weight": "200gm" , "price": 230, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": "A 100% nutrient feast enriched with beetroot and millets to support your health. This miracle drink contains zero white sugar and is a better alternative to traditional country sugar.",
@@ -768,7 +768,7 @@
           "image": "products/images/001.png"
         }
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Nutrimix",
       "productQuantity": [
         "200gm"
@@ -780,7 +780,7 @@
     {
       "productName": "Ragi Hot Chocolate",
       "prices": [
-        {"weight": "200gm" , "price": 230}
+        {"weight": "200gm" , "price": 230, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": "Enjoy the rich and comforting taste of our Ragi Chocolate Mix guilt-free. Each sip satisfies your chocolate cravings while nourishing your body.",
@@ -812,7 +812,7 @@
           "image": "products/images/001.png"
         }
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Nutrimix",
       "productQuantity": [
         "200gm"
@@ -824,7 +824,7 @@
     {
       "productName": "Carrot Nutrimix",
       "prices": [
-        {"weight": "200gm" , "price": 230}
+        {"weight": "200gm" , "price": 230, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": "A 100% nutrient feast enriched with the superstar ingredient, Carrot supports your health. This miracle drink contains zero white sugar and is a better alternative of traditional country sugar. Treat your health with a healthy and tasty blend of nutrients. Our Nutrimix is best suited for young mothers concerned about their children\u2019s eating habits and adults looking for an instant energy boost.",
@@ -856,7 +856,7 @@
           "image": "products/images/001.png"
         }
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Nutrimix",
       "productQuantity": [
         "200gm"
@@ -868,7 +868,7 @@
     {
       "productName": "Turmeric Milk Mix",
       "prices":[
-        {"weight": "200gm" , "price": 230}
+        {"weight": "200gm" , "price": 230, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": "Our Turmeric Milk Mix blends the strong flavors and bright colors of turmeric, pepper, cinnamon, dry ginger, and country sugar. Enjoy a soothing cup of our Turmeric Latte to elevate your everyday routine. It's a delectable blend that satisfies the senses and replenishes the body.",
@@ -900,7 +900,7 @@
           "image": "products/images/001.png"
         }
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Nutrimix",
       "productQuantity": [
         "200gm"
@@ -912,7 +912,7 @@
     {
       "productName": "Moringa Nutrimix",
       "prices":[
-        {"weight": "200gm" , "price": 230}
+        {"weight": "200gm" , "price": 230, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": "A 100% nutrient feast enriched with the superstar ingredient, Moringa supports your health. This miracle drink contains zero white sugar and is a better alternative of traditional country sugar. Treat your health with a healthy and tasty blend of nutrients. Our Nutrimix is best suited for young mothers concerned about their children\u2019s eating habits and adults looking for an instant energy boost.",
@@ -944,7 +944,7 @@
           "image": "products/images/001.png"
         }
       ],
-      "stock": 10,
+      "totalStock": 10,
       "category": "Nutrimix",
       "productQuantity": [
         "200gm"
@@ -956,7 +956,7 @@
     {
       "productName": "Chili Cashew",
       "prices":[
-        {"weight": "120gm" , "price": 175}
+        {"weight": "120gm" , "price": 175, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": "Enjoy the ideal combination of spice and crunch with our Chili Cashews. This flavorful snack not only satisfies your taste buds but also provides your body with essential nutrients. Each bite offers the rich, buttery taste of premium cashews, roasted to perfection and coated in a bold chili seasoning for an extra kick.",
@@ -993,14 +993,14 @@
         "120gm"
       ],
       "seller": "Grow well",
-      "stock": 10,
+      "totalStock": 10,
       "numOfReviews": 200,
       "reviews": []
     },
     {
       "productName": "Salted Almonds",
       "prices":[
-        {"weight": "120gm" , "price": 160}
+        {"weight": "120gm" , "price": 160, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": "Experience the timeless flavor and wholesome goodness of our Salted Almonds. This simple yet satisfying snack combines premium, crunchy almonds with a delicate touch of sea salt. Carefully selected and lightly roasted to perfection, these almonds offer a balanced blend of savory flavor and nutritious benefits, making them the perfect go-to snack for any time of day.",
@@ -1037,14 +1037,14 @@
         "120gm"
       ],
       "seller": "Grow well",
-      "stock": 10,
+      "totalStock": 10,
       "numOfReviews": 200,
       "reviews": []
     },
     {
       "productName": "Chili Peanut",
       "prices": [
-        {"weight": "120gm" , "price": 95}
+        {"weight": "120gm" , "price": 95, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": "Elevate your snack experience with our Chili Peanuts. Our premium peanuts are perfectly roasted to enhance their natural flavor and then seasoned with a carefully crafted blend of chili spices, creating a tantalizing mix of heat and crunch that\u2019s both satisfying and nutritious.",
@@ -1081,14 +1081,14 @@
         "120gm"
       ],
       "seller": "Grow well",
-      "stock": 10,
+      "totalStock": 10,
       "numOfReviews": 200,
       "reviews": []
     },
     {
       "productName": "6 in 1 Seed Mix",
       "prices": [
-        {"weight": "250gm" , "price": 220}
+        {"weight": "250gm" , "price": 220, "offerPrice": null ,"stock" : 3}
       ],
       "description": {
         "overView": "A delicious blend of six nutrient-rich seeds, perfect for snacking or adding to your meals.",
@@ -1125,7 +1125,7 @@
         "250gm"
       ],
       "seller": "Grow well",
-      "stock": 10,
+      "totalStock": 10,
       "numOfReviews": 200,
       "reviews": []
     }

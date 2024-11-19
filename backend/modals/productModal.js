@@ -10,7 +10,17 @@ const productSchema = new mongoose.Schema({
   prices: [
     {
       weight: String,
-      price: Number,
+      price: {
+        type: Number,
+        required: [true, "Please enter the original price"],
+      },
+      offerPrice: {
+        type: Number, // Optional, used for special offers
+      },
+      stock: {
+        type: Number,
+        required: [true, "Please enter stock for this weight range"],
+      },
     },
   ],
   description: {
@@ -70,10 +80,10 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please enter product seller"],
   },
-  stock: {
+  totalStock: {
     type: Number,
     required: [true, "Please enter product stock"],
-    maxLength: [20, "Product stock cannot exceed 20"],
+    maxLength: [50, "Product stock cannot exceed 50"],
   },
   productQuantity: {
     type: [String],

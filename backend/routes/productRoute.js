@@ -15,7 +15,7 @@ const {
 } = require("../middlewares/authenticate");
 const router = express.Router();
 
-router.route("/products").get(isAuthenticatedUser, getProducts);
+router.route("/products").get(getProducts);
 router.route("/product/:id").get(getSingleProduct);
 router.route("/reviews/create").post(isAuthenticatedUser, createReview);
 router.route("/reviews").get(getAllReviews);

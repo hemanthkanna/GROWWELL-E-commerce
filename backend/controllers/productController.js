@@ -89,15 +89,50 @@ exports.getSingleProduct = catchAsyncError(async (req, res, next) => {
   });
 });
 
-//ADMIN: UPDATE PRODUCT       --   /api/v1/product/:id
+// ADMIN: UPDATE PRODUCT -- /api/v1/product/:id
 exports.updateProduct = catchAsyncError(async (req, res, next) => {
-  const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-    runValidators: true,
-  });
+  // Fetch the product first, so you can safely manipulate it later
+  let product = await Product.findById(req.params.id);
+
   if (!product) {
     return next(new ErrorHandler("Product not found", 404));
   }
+
+  const { prices } = req.body;
+
+  // Check if prices are being updated
+  if (prices) {
+    // Iterate over the updated prices array
+    prices.forEach((priceUpdate) => {
+      if (
+        priceUpdate.offerPrice !== undefined ||
+        priceUpdate.stock !== undefined
+      ) {
+        // Update offerPrice and stock for the specific weight
+        const priceIndex = product.prices.findIndex(
+          (p) => p.weight === priceUpdate.weight
+        );
+
+        // If the price entry with the specified weight exists
+        if (priceIndex !== -1) {
+          product.prices[priceIndex].offerPrice =
+            priceUpdate.offerPrice ?? product.prices[priceIndex].offerPrice;
+          product.prices[priceIndex].stock =
+            priceUpdate.stock ?? product.prices[priceIndex].stock;
+        }
+      }
+    });
+  }
+
+  // Update other fields (including name, description, etc.) after handling prices
+  const updatedProductData = { ...req.body };
+
+  // Now that we have safely updated prices, update the product
+  product = await Product.findByIdAndUpdate(req.params.id, updatedProductData, {
+    new: true,
+    runValidators: true,
+  });
+
   res.status(200).json({
     success: true,
     message: "Product updated successfully",
